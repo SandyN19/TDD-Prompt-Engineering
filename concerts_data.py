@@ -44,3 +44,29 @@ def get_all_concerts():
         list: A list of Concert objects
     """
     return CONCERTS_DATA.copy()
+
+def SortedByDate():
+    """
+    Returns the list of concerts sorted by date.
+    
+    Returns:
+        list: A list of Concert objects sorted by date
+    """
+    
+    all_concerts = get_all_concerts()
+    
+    return sorted(all_concerts, key=lambda i: i.date)
+        
+def GetFirstConcert(artist):
+    """
+    Returns the first concert of the given artist.
+
+    Returns:
+        Concert: The first concert of the artist.
+    """
+    
+    all_concerts = get_all_concerts()
+    
+    for i in all_concerts:
+        if i.artist == artist:
+            return i
